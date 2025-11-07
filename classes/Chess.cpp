@@ -70,7 +70,6 @@ void Chess::FENtoBoard(const std::string& fen) {
     int y = 0;
     for(int i = 0; i < fen.length(); i++) {
         const char current = fen[i];
-        std::cout << "character is " << current << ", index in string of " << i << std::endl;
         if(current == 47) {x = 0; y++;} //break
         else if(current >= 49 && current <= 57) //empty numbers
             x += current - 48;
@@ -84,7 +83,6 @@ void Chess::FENtoBoard(const std::string& fen) {
             x++;
         } else if (current >= 98 && current <= 122) { //uppercase numbers
             char newCode = fen[i] - 32; //converting to our standard number
-            std::cout << "new Character is " << newCode << std::endl;
             ChessPiece newPiece = ChessPiece(pieceCodes.at(newCode));
             Bit* piece = PieceForPlayer(0, newPiece);
             ChessSquare* square = _grid->getSquare(x, y);
