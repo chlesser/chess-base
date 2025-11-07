@@ -1,6 +1,7 @@
 #include "Chess.h"
 #include <limits>
 #include <cmath>
+#include <map>
 
 Chess::Chess()
 {
@@ -52,6 +53,10 @@ void Chess::setUpBoard()
 }
 
 void Chess::FENtoBoard(const std::string& fen) {
+    const std::unordered_map <char, int> pieceCodes = {
+        {'P', 1}, {'N', 2}, {'B', 3},
+        {'R', 4}, {'Q', 5}, {'K', 6}
+    };
     // convert a FEN string to a board
     // FEN is a space delimited string with 6 fields
     // 1: piece placement (from white's perspective)
@@ -61,6 +66,36 @@ void Chess::FENtoBoard(const std::string& fen) {
     // 3: castling availability (KQkq or -)
     // 4: en passant target square (in algebraic notation, or -)
     // 5: halfmove clock (number of halfmoves since the last capture or pawn advance)
+    int x = 0;
+    int y = 0;
+    for(int i = 0; i < fen.length(); i++) {
+        const char current = fen[i];
+        std::cout << "character is " << current << ", index in string of " << i << std::endl;
+        if(current == 47) {x = 0; y++;} //break
+        else if(current >= 49 && current <= 57) //empty numbers
+            x += current - 48;
+        else if(current >= 66 && current <= 82) { //lowercase letters
+            ChessPiece newPiece = ChessPiece(pieceCodes.at(current));
+            Bit* piece = PieceForPlayer(1, newPiece);
+            ChessSquare* square = _grid->getSquare(x, y);
+            piece->setPosition(square->getPosition());
+            square->setBit(piece);
+            piece->setGameTag(newPiece);
+            x++;
+        } else if (current >= 98 && current <= 122) { //uppercase numbers
+            char newCode = fen[i] - 32; //converting to our standard number
+            std::cout << "new Character is " << newCode << std::endl;
+            ChessPiece newPiece = ChessPiece(pieceCodes.at(newCode));
+            Bit* piece = PieceForPlayer(0, newPiece);
+            ChessSquare* square = _grid->getSquare(x, y);
+            piece->setPosition(square->getPosition());
+            square->setBit(piece);
+            piece->setGameTag(newPiece + 128);
+            x++;
+        }
+        if(x == 8 && y == 7)
+            break;
+    }
 }
 
 bool Chess::actionForEmptyHolder(BitHolder &holder)
