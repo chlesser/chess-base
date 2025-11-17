@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\out\build\SixtyFour\CMakeFiles\1f7d2262e8184871e29384f9a5bf5d1a\NightlyMemoryCheck.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\out\build\SixtyFour\CMakeFiles\NightlyMemoryCheck" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{AD96528D-09BA-3900-8F16-DB52DE8EF534}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/Experimental.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/Nightly.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/Continuous.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/demo.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/PACKAGE.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/RUN_TESTS.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/ALL_BUILD.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/chess-base/out/build/SixtyFour/CMakeFiles/ZERO_CHECK.dir
