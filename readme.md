@@ -1,15 +1,9 @@
-Fork or clone your this chess project into a new GitHub repository.
+# General
+This is a chess application developed for Graeme's CMPM123 Advanced Programming class. It is developed using visual studio code on a windows machine, programmed in c++ and utilizing the dearIMGUI library. Absolutely no generative AI was used in this course.
 
-Add support for FEN stringsLinks to an external site. to your game setup so that instead of the current way you are setting up your game board you are setting it up with a call similar to the following call.
+## Game Setup Implementation
+### FEN String Implementation
+The FEN string implementation was simple to add. It loops through the string, and adds the corresponding piece to both the state string and the physical game.
 
-FENtoBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-
-Your routine should be able to take just the board position portion of a FEN string, or the entire FEN string like so:
-
-FENtoBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-
-(you can ignore the end for now)
-
-This will allow you to quickly check that your castling, promotion and en passant code is working.
-PNG OF PROOF:
-![alt text](image.png)
+### King, Knight, Pawn Implementation
+Lots of this implementation was inspired by the lectures from CMPM123. It utilizes bitboards for the application to run much quicker when minimax is implemented. All of the king and knight's possible positions are stored in a bitboard that is accessed by index at the end of the previous turn. Pawns work differently, their possible moves being selected via mass shifts at the end of the previous turn. There is no bitboard for them to store themselves in. Bitshifting is used with great frequency.

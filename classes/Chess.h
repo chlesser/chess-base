@@ -49,8 +49,6 @@ private:
 
     BitboardElement knightBoards[64];
     BitboardElement kingBoards[64];
-    BitboardElement whitePawnBoard;
-    BitboardElement blackPawnBoard;
     std::vector<BitMove> _moves;
     Grid* _grid;
 };
