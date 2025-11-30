@@ -45,6 +45,29 @@ class BitboardElement {
         _data |= other;
         return *this;
     }
+    BitboardElement& operator&=(const uint64_t other) {
+        _data &= other;
+        return *this;
+    }
+
+    BitboardElement& operator^=(const uint64_t other) {
+        _data ^= other;
+        return *this;
+    }
+    BitboardElement& operator|=(const BitboardElement other) {
+            _data |= other.getData();
+            return *this;
+        }
+
+        BitboardElement& operator&=(const BitboardElement other) {
+            _data &= other.getData();
+            return *this;
+        }
+
+        BitboardElement& operator^=(const BitboardElement other) {
+            _data ^= other.getData();
+            return *this;
+        }
 
     void printBitboard() {
         std::cout << "\n  a b c d e f g h\n";
