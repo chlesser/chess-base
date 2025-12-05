@@ -14,6 +14,17 @@ public:
 
     void setUpBoard() override;
 
+    void setBoardFromFEN(const std::string& fen);
+    BitMove getLastAIMove() const { return _lastAIMove; }
+    std::string getFEN() const;
+
+    // Get current player color (WHITE=1, BLACK=-1)
+    int getCurrentPlayerColor() const { return _currentPlayer; }
+
+    // you can make this variable private, it's just grouped with the public methods for convenience
+    BitMove _lastAIMove;  // Stores the last move calculated by AI (for tournament)
+
+
     bool canBitMoveFrom(Bit &bit, BitHolder &src) override;
     bool canBitMoveFromTo(Bit &bit, BitHolder &src, BitHolder &dst) override;
     bool actionForEmptyHolder(BitHolder &holder) override;

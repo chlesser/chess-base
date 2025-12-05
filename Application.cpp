@@ -6,12 +6,16 @@
 #include "classes/Connect4.h"
 #include "classes/Chess.h"
 
+
+
 namespace ClassGame {
         //
         // our global variables
         //
         Game *game = nullptr;
+
         bool gameOver = false;
+        
         int gameWinner = -1;
 
         //

@@ -5,6 +5,7 @@
 #include <limits>
 #include <chrono>
 #include <array>
+#include <sstream>
 #include <iomanip>
 #include <cmath>
 #include <map>
@@ -293,6 +294,7 @@ void Chess::setStateString(const std::string &s)
 int negInf = -1000000;
 void Chess::updateAI() 
 {
+    _lastAIMove = BitMove();
     const auto searchStart = std::chrono::steady_clock::now();
     _countMoves = 0;
     int bestVal = negInf;
@@ -302,7 +304,7 @@ void Chess::updateAI()
 
     for(auto move : _moves) {
         _gameState.pushMove(move);
-        int moveVal = -negamax(_gameState, 5, negInf, -negInf);
+        int moveVal = -negamax(_gameState, 6, negInf, -negInf);
         // Undo the move 
         _gameState.popState();
 
@@ -313,6 +315,7 @@ void Chess::updateAI()
     }
 
     if(bestVal != negInf) {
+        _lastAIMove = bestMove;
         const double seconds = std::chrono::duration<double>(std::chrono::steady_clock::now() - searchStart).count();
         const double boardsPerSecond = seconds > 0.0 ? static_cast<double>(_countMoves) / seconds : 0.0;
         std::cout << "Moves checked: " << _countMoves
