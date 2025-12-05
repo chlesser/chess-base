@@ -390,6 +390,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\classes\Othello.cpp" />
     <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\classes\Connect4.cpp" />
     <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\classes\Chess.cpp" />
+    <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\classes\GameState.cpp" />
     <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\main_win32.cpp" />
     <ClCompile Include="C:\Users\hydri\OneDrive\Documents\GitHub\chess-base\imgui\imgui_impl_win32.cpp" />
