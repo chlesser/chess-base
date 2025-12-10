@@ -304,7 +304,7 @@ void Chess::updateAI()
 
     for(auto move : _moves) {
         _gameState.pushMove(move);
-        int moveVal = -negamax(_gameState, 6, negInf, -negInf);
+        int moveVal = -negamax(_gameState, 5, negInf, -negInf);
         // Undo the move 
         _gameState.popState();
 
